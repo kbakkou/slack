@@ -1,0 +1,26 @@
+<ul class="nav flex-column">
+  <li class="nav-item">
+    <a class="nav-link" routerLink="canaux" routerLinkActive="active">
+      Canaux
+    </a>
+    <ul *ngIf="canaux$ |async as canaux">
+      <li *ngFor="let canal of canaux">
+        <a class="nav-link" routerLink="messages/{{ canal.id }}" routerLinkActive="active">
+          {{ canal.name }}
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="orders" routerLinkActive="active">
+      Orders
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="clients" routerLinkActive="active">
+      Clients
+    </a>
+  </li>
+</ul>
+
+<!-- <button (click)="incrementVersion()">increment</button> -->

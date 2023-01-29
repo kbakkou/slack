@@ -1,0 +1,15 @@
+<app-template-full-width title="Liste des commandes">
+  <app-table-light [headers]="headers" *ngIf="canaux$ |async as canaux">
+    <!-- <pre>{{ canaux |json }}</pre> -->
+    <tr *ngFor="let canal of canaux">
+      <td>
+        <app-icon-edit (click)="goToEdit(canal.id)"></app-icon-edit>
+        <app-icon-delete (click)="deleteItem(canal.id)"></app-icon-delete>
+      </td>
+      <td>{{ canal.name }}</td>
+      <td>{{ canal.user }}</td>
+      <td>{{ canal.date }}</td>
+    </tr>
+  </app-table-light>
+</app-template-full-width>
+<app-btn label="Add canal" route="add"></app-btn>

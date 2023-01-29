@@ -1,0 +1,3 @@
+<app-template-container title="Modifier la commande" *ngIf="canal$ |async as canal">
+  <app-form-canal [init]="canal" (submitted)="action($event)"></app-form-canal>
+</app-template-container>
